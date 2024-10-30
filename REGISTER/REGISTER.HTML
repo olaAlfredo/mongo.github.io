@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../REGISTER/Contenido.css" />
+  </head>
+  <body>
+    <div id="crear-content" class="content-panel">
+      <h1 class="content-title">Registrar usuario</h1>
+      <p class="content-description">
+        Crea un nuevo usuario, este ednpoint permite registrar nuevos usuarios para la aplicación.
+      </p>
+      <p class="content-description">
+        Una vez el usuario creado regresara un mensaje de que el usuario fue creado con exito.
+      </p>
+      <div class="authorization-info">
+        <strong>AUTORIZACIÓN REQUERIDA:</strong>
+        <span class="code">ApiKey</span>
+      </div>
+      <div class="auth-content">
+          <p class="auth-description">
+            Única por nuevo  usuario. 
+            permite crear un nuevo usuario.
+          </p>
+          
+          <div class="auth-details">
+            <div class="auth-scheme">
+              <span>Authorization type:</span>
+              <span class="bearer-tag">bearer token</span>
+            </div>
+            <div class="bearer-format">
+              <span>Bearer format:</span>
+              <span class="format-code">sk_test_xxxxxxxxxxx</span>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="api-docs">
+      <div class="schema-section">
+        <h3 class="schema-header">REQUEST BODY SCHEMA: application/json</h3>
+
+        <div class="field">
+          <div>
+            <span class="field-name">username</span>
+            <span class="field-type">string</span>
+            <span class="required">required</span>
+          </div>
+          <div class="field-description">
+            Representa el nombre de usuario.
+          </div>
+        </div>
+
+        <div class="field">
+          <div>
+            <span class="field-name">password</span>
+            <span class="field-type">string</span>
+            <span class="required">required</span>
+          </div>
+          <div class="field-description">
+            Representa la contraseña del usuario.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="responses">
+      <div class="schema-section">
+        <h2 style="color: black">Responses</h2>
+
+        <div class="response-item success">
+          <span class="response-code">201</span>
+          <span class="response-description"
+            >Nuevo <span class="customer-tag">Usuario</span> creado</span
+          >
+        </div>
+
+        <div class="response-item client-error">
+          <span class="error-code">403</span>
+          <span class="response-description">Error al crear usuario</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h2 style="margin-bottom: 20px">Request samples</h2>
+
+      <div class="header">
+        <span class="method">POST</span>
+        <input type="text" class="url-input" disabled value="https://localhost:3020/auth/register" />
+      </div>
+
+      <div class="content">
+        <div class="type">json</div>
+
+        <div class="json">
+          {
+            <span class="key">"ussername"</span>:<span class="string">"Random12"</span>,
+            <span class="key">"password"</span>:<span class="string">"123458"</span>
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="response-viewer">
+      <h2 style="margin-bottom: 20px; margin-top: 20px">Response samples</h2>
+
+      <div class="header">
+        <span class="method-response">201</span>
+      </div>
+
+      <div class="content">
+        <div class="type">json</div>
+
+        <div class="json">
+          {
+            <span class="key">"titulo"</span>:<span class="string">"Random12"</span>,
+            <span class="key">"descripcion"</span>:<span class="string">"123458"</span>,
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="response-viewer">
+        <h2 style="margin-bottom: 20px; margin-top: 20px"></h2>
+  
+        <div class="header" >
+          <span class="method-response-error">403</span>
+        </div>
+  
+        <div class="content">
+          <div class="type">json</div>
+  
+          <div class="json">
+        {
+            <span class="key">"code"</span>:<span class="string">"403"</span>,
+            <span class="key">"message"</span>:<span class="string">"Usuario existente."</span>
+        }
+          </div>
+        </div>
+      </div>
+  </body>
+</html>
